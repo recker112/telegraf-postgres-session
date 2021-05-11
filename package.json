@@ -1,0 +1,32 @@
+{
+  "name": "telegraf-postgres-session",
+  "version": "1.0.0",
+  "description": "A middleware session for telegraf",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/recker112/telegraf-postgres-session.git"
+  },
+  "keywords": [
+    "telegraf",
+    "postgressql",
+    "telegraf-session",
+    "telegram",
+    "middleware"
+  ],
+  "author": {
+    "name": "recker112",
+    "email": "joseortiz112001@gmail.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/recker112/telegraf-postgres-session/issues"
+  },
+  "homepage": "https://github.com/recker112/telegraf-postgres-session#readme",
+  "dependencies": {
+    "pg": "^8.6.0"
+  }
+}
