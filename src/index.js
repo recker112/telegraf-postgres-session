@@ -66,10 +66,18 @@ class PostgresSession {
 		}
 
 		const sessionString = JSON.stringify(session);
-		return client.query(`INSERT INTO postgress_sessions (id,session) VALUES ('${key}','${sessionString}') ON CONFLICT (id) DO UPDATE SET session = '${sessionString}'`).then(() => {
-			//console.log('CERRANDO');
+		return client.query(`INSERT INTO postgress_sessions (id,session) VALUES ('${key}','${sessionString}')`).then(() => {
+			//console.log('CREADO');
 			return client.end();
-		})
+		}).catch(() => {
+			client.query(`UPDATE postgress_sessions SET session='${sessionString}' WHERE id='${key}'`).then(() => {
+				//console.log('GUARDADO');
+				return client.end();
+			}).catch((e) => {
+				console.log('Error al guardar',e);
+				return client.end();
+			});
+		});
 	}
 	
 	middleware() {
