@@ -15,7 +15,11 @@ class PostgresSession {
 		if (ctx.updateType === 'callback_query') {
 			ctx = ctx.update.callback_query;
 			chat_id = ctx.message.chat.id;
-		}else {
+		} else if (ctx.updateType === 'inline_query'){
+			ctx = ctx.update.inline_query;
+			chat_id = ctx.from.id;
+		}
+		else {
 			chat_id = ctx.chat.id;
 		}
 		if (!ctx.from || !chat_id) {
