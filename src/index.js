@@ -18,8 +18,7 @@ class PostgresSession {
 		} else if (ctx.updateType === 'inline_query'){
 			ctx = ctx.update.inline_query;
 			chat_id = ctx.from.id;
-		}
-		else {
+		} else if (ctx.chat) {
 			chat_id = ctx.chat.id;
 		}
 		if (!ctx.from || !chat_id) {
