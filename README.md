@@ -7,7 +7,7 @@ npm i telegraf-postgres-session
 Create table in your database
 
 ```SQL
-CREATE TABLE postgress_sessions(id varchar, session varchar);
+CREATE TABLE postgress_sessions(id varchar PRIMARY KEY, session varchar);
 ```
 
 ## Example
