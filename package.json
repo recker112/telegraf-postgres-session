@@ -1,6 +1,6 @@
 {
   "name": "telegraf-postgres-session",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "A middleware session for telegraf",
   "main": "src/index.js",
   "scripts": {
